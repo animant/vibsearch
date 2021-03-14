@@ -13,20 +13,7 @@ CL_PAT='\033[91m'
 CL_DEF='\033[0m'
 
 localdir = [d for d in os.listdir(os.path.expanduser('~') +'/.ViberPC') if set(d) < set(['1','2','3','4','5','6','7','8','9','0'])][0]
-filename = f"/home/animant/.ViberPC/{localdir}/viber.db"
-
-#dump_msges_general="""
-#SELECT strftime('%Y-%m-%d %H:%M:%S',(Events.TimeStamp/1000),'unixepoch') AS Time, 
-# Contact.Name AS Name,
-# Contact.ClientName AS AltName,
-# Contact.Number As Cellphone,
-# CASE Direction WHEN 0 THEN 'rcvd' ELSE 'sent' END AS Direction,
-# Messages.Body AS Message
-#FROM Events 
-# INNER JOIN Contact ON Events.ContactID = Contact.ContactID
-# INNER JOIN Messages ON Events.EventID = Messages.EventID
-#ORDER BY Time;
-#"""
+filename = f"{os.path.expanduser('~')}/.ViberPC/{localdir}/viber.db"
 
 def composite_name(a,b):
     if a and b:
@@ -166,10 +153,6 @@ def dump_conversation(names=[''], pattern=''):
                     break
 
 
-
-#get_phone_numbers()
-#dump_messages(['vikto'])
-#dump_communication(['irken', 'animant'])
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
