@@ -2,6 +2,7 @@
 Utility for viber history search
 
 # usage
+```sh
 python3 vsearch.py [-h] [--names] [--phones] [--messages] [--conv]
                             [--pattern PATTERN]
                             [namelist [namelist ...]]
@@ -19,9 +20,10 @@ optional arguments:
   --conv, -c            search for conversation
   --pattern PATTERN, -x PATTERN
                         filter messages by text pattern (case sensitive)
-
+```
 
 # examples
+```sh
 python3 vsearch.py # print help end exit
 python3 vsearch.py -n # print all saved contact names
 python3 vsearch.py -n Petro # print all saved contact names that match 'Petro' substring
@@ -30,3 +32,4 @@ python3 vsearch.py -m petro maRicHka Iryna # show all messages from
                                            # 'Petro' 'Marichka' 'Iryna' (case insensitive matching works)
 python3 vsearch.py -m Viktoria Oleh # show all conversation (messages from common chats) between Viktoria and Oleh
 python3 vsearch.py -x lindenmann -m Viktoria Oleh # the same but with filtering by string 'lindenmann' (case sensitive)
+```
